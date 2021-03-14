@@ -1,4 +1,4 @@
-import parsePath from './lang'
+import {parsePath} from './lang'
 import Dep, { pushTarget, popTarget } from './dep'
 
 export default class Watcher { 

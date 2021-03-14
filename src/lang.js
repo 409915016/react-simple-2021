@@ -4,7 +4,7 @@
 
 const bailRE = /[^\w.$]/
 
-export default function parsePath (path) {
+export function parsePath (path) {
   if (bailRE.test(path)) {
     return
   }
@@ -16,4 +16,16 @@ export default function parsePath (path) {
     }
     return obj
   }
+}
+
+/**
+ * Define a property.
+ */
+ export function def (obj, key, val, enumerable) {
+  Object.defineProperty(obj, key, {
+    value: val,
+    enumerable: !!enumerable,
+    writable: true,
+    configurable: true
+  })
 }
